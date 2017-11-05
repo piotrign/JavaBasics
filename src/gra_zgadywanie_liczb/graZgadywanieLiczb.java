@@ -1,4 +1,5 @@
 package gra_zgadywanie_liczb;
+import java.util.InputMismatchException;
 /*
  * Warsztat: Gra w zgadywanie liczb.
 
@@ -31,40 +32,50 @@ import java.util.Scanner;
 
 public class graZgadywanieLiczb {
 
-	
-	
+
+
 	public static void main(String args[]){
-		guessGame();
+		guessingGame();
 	}
 
-	public static void guessGame(){
+	public static void guessingGame() throws InputMismatchException{
 		Random rand = new Random();
 		int pcNumber = rand.nextInt(101);
 		Scanner input = new Scanner(System.in);
 		int userNumber = 0;
 		boolean win = false;
-		
-		//while(true){
-		
-			
+
+		System.out.println(
+				"Welcome to Guess a number game! Please pick a number from 1 to 100 inclusive. "
+						+ "\n" + "Have fun and good luck! :)");
+		try{
+			System.out.println(pcNumber);
 			while (win == false){
-				System.out.println("Guess a number (1 to 100 inclusive) :)");
+				
+
 				userNumber = input.nextInt();
-				if(!input.hasNextInt()) System.out.println("It's not a number :(");
-				else if (userNumber == pcNumber) {
-					win = true;
-					break;
-				}
-				else if (userNumber < pcNumber) {
-					System.out.println("Your guess is too low!");
-				}
-				else if (userNumber > pcNumber) {
-					System.out.println("Your guess is too high!");
-				}
+
+				if(userNumber < 1 || userNumber > 100) 
+					System.out.println("You must pick a number within 1 - 100 range (inclusive)");
+				else 
+					if (userNumber == pcNumber) {
+						win = true;
+						break;
+					}
+					else if (userNumber < pcNumber) {
+						System.out.println("Your guess is too low!");
+					}
+					else if (userNumber > pcNumber) {
+						System.out.println("Your guess is too high!");
+					}
 			}
-			System.out.println("Congratulations you won! The number was: " + pcNumber);
-//			System.out.println("Do you want to play again? (Press 1-Yes or 2-No)");
-//			if(input.nextInt() == 2) break;
+		}catch(InputMismatchException e){
+			System.out.println("You must pick a number within 1 - 100 range (inclusive)");
 		}
+
+		System.out.println("Congratulations you won! The number was: " + pcNumber);
+		//			System.out.println("Do you want to play again? (Press 1-Yes or 2-No)");
+		//			if(input.nextInt() == 2) break;
 	}
+}
 
