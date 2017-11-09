@@ -49,9 +49,9 @@ public class graZgadywanieLiczb {
 				"Welcome to Guess a number game! Please pick a number from 1 to 100 inclusive. "
 						+ "\n" + "Have fun and good luck! :)");
 		try{
-			System.out.println(pcNumber);
+			//System.out.println(pcNumber);
 			while (win == false){
-				
+
 
 				userNumber = input.nextInt();
 
@@ -60,7 +60,8 @@ public class graZgadywanieLiczb {
 				else 
 					if (userNumber == pcNumber) {
 						win = true;
-						break;
+						System.out.println("Congratulations you won! The number was: " + pcNumber);
+						break;				
 					}
 					else if (userNumber < pcNumber) {
 						System.out.println("Your guess is too low!");
@@ -70,12 +71,9 @@ public class graZgadywanieLiczb {
 					}
 			}
 		}catch(InputMismatchException e){
-			System.out.println("You must pick a number within 1 - 100 range (inclusive)");
-		}
-
-		System.out.println("Congratulations you won! The number was: " + pcNumber);
+			System.out.println("This is not a valid number. You must pick a number within 1 - 100 range (inclusive)");
+		}	
 		//			System.out.println("Do you want to play again? (Press 1-Yes or 2-No)");
 		//			if(input.nextInt() == 2) break;
 	}
 }
-
