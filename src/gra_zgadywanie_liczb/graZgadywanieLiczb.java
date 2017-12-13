@@ -75,5 +75,8 @@ public class graZgadywanieLiczb {
 		}	
 		//			System.out.println("Do you want to play again? (Press 1-Yes or 2-No)");
 		//			if(input.nextInt() == 2) break;
+	
+	
+	
 	}
 }
