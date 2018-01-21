@@ -1,4 +1,4 @@
-package gra_zgadywanie_liczb;
+package guessgamebyuser;
 import java.util.InputMismatchException;
 /*
  * Warsztat: Gra w zgadywanie liczb.

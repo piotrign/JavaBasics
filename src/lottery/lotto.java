@@ -1,3 +1,4 @@
+package lottery;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.InputMismatchException;
@@ -35,7 +36,7 @@ public class lotto {
 		lotto();
 	}
 
-	public static void lotto() throws InputMismatchException {
+	public static void lotto(){
 		// Generating numbers to guess
 		Integer[] arr = new Integer[49];
 		for (int i = 1; i < arr.length; i++) {
