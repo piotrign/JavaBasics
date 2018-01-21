@@ -37,7 +37,7 @@ public class lotto {
 
 	public static void lotto() throws InputMismatchException {
 		// Generating numbers to guess
-		Integer[] arr = new Integer[50];
+		Integer[] arr = new Integer[49];
 		for (int i = 1; i < arr.length; i++) {
 			arr[i] = i;
 		}
@@ -47,11 +47,17 @@ public class lotto {
 		System.out.println(Arrays.toString(arr));
 
 		// User input
+		
 		Scanner input = new Scanner(System.in);
 		int[] uGuess = new int[6];
 		for (int i = 0; i < uGuess.length; i++) {
+			try{
 			System.out.println("Please enter number");
 			uGuess[i] = input.nextInt();
+			}catch(InputMismatchException e){
+				System.out.println("Please enter a correct number value.");
+			}
+			
 		}
 		Collections.shuffle(Arrays.asList(uGuess));
 		System.out.println(Arrays.toString(uGuess));
