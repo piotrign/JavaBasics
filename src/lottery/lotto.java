@@ -1,4 +1,5 @@
 package lottery;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.InputMismatchException;
@@ -36,43 +37,69 @@ public class lotto {
 		lotto();
 	}
 
-	public static void lotto(){
+	public static void lotto() {
 		// Generating numbers to guess
-		Integer[] arr = new Integer[49];
-		for (int i = 1; i < arr.length; i++) {
-			arr[i] = i;
+		Integer[] allGeneratedNbrs = new Integer[50];
+		for (int i = 0; i < allGeneratedNbrs.length; i++) {
+			allGeneratedNbrs[i] = i;
 		}
+		System.out.println("All generated nmbrs " + Arrays.toString(allGeneratedNbrs));
+		Collections.shuffle(Arrays.asList(allGeneratedNbrs));
+		System.out.println("All generated nmbrs in random order: " + Arrays.toString(allGeneratedNbrs));
 
-		System.out.println(Arrays.toString(arr));
-		Collections.shuffle(Arrays.asList(arr));
-		System.out.println(Arrays.toString(arr));
+		// Selecting numbers to guess
+		Integer[] selectedRandomNbrs = new Integer[6];
+		for (int i = 0; i < 6; i++) {
+			selectedRandomNbrs[i] = allGeneratedNbrs[i];
+		}
+		System.out.println("Numbers to find: " + Arrays.toString(selectedRandomNbrs));
 
 		// User input
-		
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
-		int[] uGuess = new int[6];
-		for (int i = 0; i < uGuess.length; i++) {
-			try{
-			System.out.println("Please enter number");
-			uGuess[i] = input.nextInt();
-			}catch(InputMismatchException e){
-				System.out.println("Please enter a correct number value.");
+		int[] userGuess = new int[6];
+		
+		for (int i = 0; i < 6; i++) {
+			try {
+				System.out.println("Please enter number");
+				userGuess[i] = input.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Please enter a number value.");
 			}
-			
+
 		}
-		Collections.shuffle(Arrays.asList(uGuess));
-		System.out.println(Arrays.toString(uGuess));
+		// Collections.shuffle(Arrays.asList(userGuess));
+		System.out.println(Arrays.toString(userGuess));
 
 		// Comparing user input with generated numbers
-		for (int i = 0; i < uGuess.length; i++) {
-			int num = uGuess[i];
-			for (int j = 0; j < arr.length; i++) {
-				if (num == arr[j]) {
-					int numMatches = 0;
+		int numMatches = 0;
+		for (int i = 0; i < userGuess.length; i++) {
+			int num = userGuess[i];
+			for (int j = 0; j < selectedRandomNbrs.length; i++) {
+				if (num == selectedRandomNbrs[j]) {
 					numMatches++;
 					break;
 				}
 			}
+		}
+		// Victory thresholds
+		switch (numMatches) {
+		case 1:
+			numMatches = 3;
+			System.out.println("Congratulations, you have won 3!");
+			break;
+		case 2:
+			numMatches = 4;
+			System.out.println("Congratulations, you have won 4!");
+			break;
+		case 3:
+			numMatches = 5;
+			System.out.println("Congratulations, you have won 5!");
+			break;
+		case 4:
+			numMatches = 6;
+			System.out.println("Congratulations, you have won full prize!!!");
+			break;
 		}
 	}
 }
