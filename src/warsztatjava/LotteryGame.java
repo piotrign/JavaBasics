@@ -50,7 +50,6 @@ public class LotteryGame {
 				System.out.println("Input is not a number please try again.");
 				i--;
 				input.next();
-
 			}
 		}
 		input.close();
@@ -79,7 +78,7 @@ public class LotteryGame {
 			break;
 		case 2:
 			prize = "Congratulations you have guessed " + numMatches + "numbers.";
-
+			break;
 		case 1:
 			prize = "Congratulations you have guessed " + numMatches + "numbers and won another lottery ticket.";
 			break;
@@ -88,6 +87,7 @@ public class LotteryGame {
 			break;
 		default:
 			prize = "Wait what? Someone changed the code for sure...";
+			break;
 		}
 		System.out.println(prize);
 	}
