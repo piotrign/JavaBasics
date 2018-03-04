@@ -1,32 +1,7 @@
-package diece;
+package warsztatjava;
 
 import java.util.Random;
 
-/*
- * Kod takiej kostki wygląda następująco:
-
-xDy+z
-
-gdzie:
-
-y – rodzaj kostek, których należy użyć (np. D6, D10),
-x – liczba rzutów kośćmi; jeśli rzucamy raz, ten parametr jest pomijalny,
-z – liczba, którą należy dodać (lub odjąć) do wyniku rzutów (opcjonalnie).
-Przykłady:
-
-2D10+10: 2 rzuty D10, do wyniku dodaj 10,
-D6: zwykły rzut kostką sześcienną,
-2D3: rzut dwiema kostkami trójściennymi,
-D12-1: rzut kością D12, od wyniku odejmij 1.
-Napisz funkcję, która:
-
-przyjmie w parametrze taki kod w postaci String,
-rozpozna wszystkie dane wejściowe:
-rodzaj kostki,
-liczbę rzutów,
-modyfikator,
-wykona symulację rzutów i zwróci wynik.
- */
 public class Diece {
 
 	public static void main(String args[]) {

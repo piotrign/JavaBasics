@@ -6,7 +6,21 @@ import java.util.List;
 import java.util.Random;
 
 public class Test01 {
-	public static void main(String[] args){
+	public static void main(String[] args) {
+		// Generating numbers to guess
+//		Integer[] allGeneratedNbrs = new Integer[50];
+		List<Integer> allGeneratedNbrs = new ArrayList<>();
+		for (int i = 1; i < 50; i++) {
+			allGeneratedNbrs.add(i);
+		}
+		System.out.println(allGeneratedNbrs.toString());
+		Collections.shuffle(allGeneratedNbrs);
+		System.out.println(allGeneratedNbrs);
+	}
+
+	
+	
+	public static List<Integer> test121(){
 		Random rand = new Random();
 //		int size = 10;
 		List<Integer> numbers = new ArrayList<Integer>();
@@ -21,5 +35,7 @@ public class Test01 {
 		System.out.println(numbers);
 		Collections.sort(numbersSorted);
 		System.out.println(numbersSorted);
+		
+		return numbersSorted;
 	}
 }
