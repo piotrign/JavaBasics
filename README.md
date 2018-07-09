@@ -1,2 +1,2 @@
-# Warsztaty_1
-Pierwszy warsztat w ramach kursu java CodersLab.
+# Java Basics
+First workshop in the coder's lab school.
