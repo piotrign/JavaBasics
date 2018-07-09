@@ -1,4 +1,4 @@
-package warsztatjava;
+package workshop.java.basics;
 
 import java.util.ArrayList;
 import java.util.Collections;

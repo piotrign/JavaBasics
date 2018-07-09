@@ -1,10 +1,10 @@
-package warsztatjava;
+package workshop.java.basics;
 
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GraZgadywanieLiczb {
+public class GuessNumberGame {
 
 	public static void main(String args[]) {
 		guessingGame();

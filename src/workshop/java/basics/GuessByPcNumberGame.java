@@ -1,8 +1,8 @@
-package warsztatjava;
+package workshop.java.basics;
 
 import java.util.Scanner;
 
-public class ZgadnijLiczbe2 {
+public class GuessByPcNumberGame {
 
 	public static void main(String args[]) {
 		System.out.println("Think about number 1 to 1000, and I will guess it in up to tenth try.");
